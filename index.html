@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Markdown Helper</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="index.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="topnav">
-        <a class="active" href="https://github.com/CODEMCD/markdown-helper">README</a>
-        <a>TOC Generator</a>
-        <a>Character Eliminator</a>
+      <a class="active" href="https://github.com/CODEMCD/markdown-helper"
+        >README</a
+      >
+      <a>TOC Generator</a>
+      <a>Character Eliminator</a>
     </div>
 
-    <form class="js-form form">
-        <div>
-            <textarea placeholder="Input Some Markdown Text."></textarea>
-        </div>
-        <div>
-            <button class="toc-button" type="button">Convert</button>
-        </div>
-        <div>
+    <div class="row">
+      <div class="column left"></div>
+      <div class="column middle">
+        <form class="js-form form">
+          <div>
+            <textarea placeholder="Input Markdown."></textarea>
+          </div>
+          <div>
+            <button class="toc-button" type="button">Generate TOC</button>
+          </div>
+          <div>
             <textarea class="result" readonly></textarea>
-        </div>
-    </form>
+          </div>
+        </form>
+      </div>
+      <div class="column right"></div>
+    </div>
 
     <script src="nav.js"></script>
     <script src="toc.js"></script>
-</body>
-
+  </body>
 </html>
