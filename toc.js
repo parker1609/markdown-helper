@@ -67,7 +67,7 @@ function convertTOCLine(line, level, tabSize) {
 function isHeader(line) {
     const headerToken = line.split(" ");
 
-    if (headerToken[0].length > 4) {
+    if (headerToken[0].length == 0 || headerToken[0].length > 4) {
         return false;
     }
     
