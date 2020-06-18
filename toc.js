@@ -65,7 +65,18 @@ function convertTOCLine(line, level, tabSize) {
 }
 
 function isHeader(line) {
-    return line[0] === '#';
+    const headerToken = line.split(" ");
+
+    if (headerToken[0].length > 4) {
+        return false;
+    }
+    
+    for (let i=0; i<headerToken[0].length; ++i) {
+        if (headerToken[0][i] !== '#') {
+            return false;
+        }
+    }
+    return true;
 }
 
 function generateTOC(input) {
@@ -78,6 +89,10 @@ function generateTOC(input) {
             resultTOC += convertTOCLine(lines[i], headerLevel, 4);
             resultTOC += "\n";
         }
+    }
+
+    if (resultTOC === "") {
+        resultTOC += "Header가 존재하지 않습니다.";
     }
 
     return resultTOC;
