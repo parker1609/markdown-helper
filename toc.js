@@ -1,6 +1,6 @@
 const form = document.querySelector(".js-form"),
     textArea = form.querySelector("textarea"),
-    button = form.querySelector("button"),
+    button = form.querySelector(".toc-button"),
     result = form.querySelector(".result");
 
 function getHeaderLevel(headerLine) {

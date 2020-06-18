@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Markdown Helper</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="index.css" />
-  </head>
+    <head>
+        <title>Markdown Helper</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="index.css" />
+    </head>
 
-  <body>
-    <div class="topnav">
-      <a class="active" href="https://github.com/CODEMCD/markdown-helper"
-        >README</a
-      >
-      <a>TOC Generator</a>
-      <a>Character Eliminator</a>
-    </div>
+    <body>
+        <div class="topnav">
+            <a class="active" href="https://github.com/CODEMCD/markdown-helper"
+                >README</a
+            >
+            <a>TOC Generator</a>
+            <a>Character Eliminator</a>
+        </div>
 
-    <div class="row">
-      <div class="column left"></div>
-      <div class="column middle">
-        <form class="js-form form">
-          <div>
-            <textarea placeholder="Input Markdown."></textarea>
-          </div>
-          <div>
-            <button class="toc-button" type="button">Generate TOC</button>
-          </div>
-          <div>
-            <textarea class="result" readonly></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="column right"></div>
-    </div>
+        <div class="row">
+            <div class="column left"></div>
+            <div class="column middle">
+                <form class="js-form form">
+                    <div>
+                        <textarea placeholder="Input Markdown."></textarea>
+                    </div>
+                    <div>
+                        <button class="toc-button" type="button">
+                            Generate TOC
+                        </button>
+                    </div>
+                    <div>
+                        <textarea class="result" readonly></textarea>
+                    </div>
+                    <div>
+                        <button class="js-copy copy-button" type="button">Copy Text</button>
+                    </div>
+                </form>
+            </div>
+            <div class="column right"></div>
+        </div>
 
-    <script src="nav.js"></script>
-    <script src="toc.js"></script>
-  </body>
+        <script src="nav.js"></script>
+        <script src="toc.js"></script>
+        <script src="copy.js"></script>
+    </body>
 </html>
