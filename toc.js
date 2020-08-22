@@ -79,12 +79,37 @@ function isHeader(line) {
     return true;
 }
 
+function isCodeBlock(line) {
+    const codeBlockSyntaxToken = line.trim().slice(0, 3);
+
+    if (codeBlockSyntaxToken === '```' || codeBlockSyntaxToken === '~~~') {
+        return true;
+    }
+
+    return false;
+}
+
+function getCodeBlockEndLine(currentLine, currentIndex, lines) {
+    const codeBlockSyntaxToken = currentLine.trim().slice(0, 3);
+
+    for (let i=currentIndex + 1; i<lines.length; ++i) {
+        if (lines[i].trim().slice(0, 3) === codeBlockSyntaxToken) {
+            return i;
+        }
+    }
+
+    return currentIndex;
+}
+
 function generateTOC(input) {
     const lines = input.split("\n");
     let resultTOC = "";
 
     for (let i=0; i<lines.length; ++i) {
-        if (isHeader(lines[i])) {
+        if (isCodeBlock(lines[i])) {
+            i = getCodeBlockEndLine(lines[i], i, lines);
+        }
+        else if (isHeader(lines[i])) {
             const headerLevel = getHeaderLevel(lines[i]);
             resultTOC += convertTOCLine(lines[i], headerLevel, 4);
             resultTOC += "\n";
